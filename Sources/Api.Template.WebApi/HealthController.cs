@@ -15,7 +15,7 @@ namespace Api.Template.WebApi
         /// </summary>
         /// <returns>Статус службы.</returns>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             return this.Ok();
         }

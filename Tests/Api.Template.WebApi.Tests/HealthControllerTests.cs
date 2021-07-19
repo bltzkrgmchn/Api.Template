@@ -14,7 +14,7 @@ namespace Api.Template.WebApi.Tests
         public void CanCheckHealth()
         {
             HealthController sut = new HealthController();
-            StatusCodeResult result = sut.Get().GetAwaiter().GetResult() as StatusCodeResult;
+            StatusCodeResult result = sut.Get() as StatusCodeResult;
 
             result.Should().NotBe(null);
             result.StatusCode.Should().Be((int)HttpStatusCode.OK);

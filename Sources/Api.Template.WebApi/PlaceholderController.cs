@@ -45,7 +45,7 @@ namespace Api.Template.WebApi
         {
             try
             {
-                var placeholders = this.placeholderService.Get();
+                var placeholders = await this.placeholderService.Get();
                 return this.Ok(placeholders);
             }
             catch (Exception)
@@ -66,7 +66,7 @@ namespace Api.Template.WebApi
         {
             try
             {
-                var placeholder = this.placeholderService.Get(id);
+                var placeholder = await this.placeholderService.Get(id);
 
                 if (placeholder != null)
                 {
