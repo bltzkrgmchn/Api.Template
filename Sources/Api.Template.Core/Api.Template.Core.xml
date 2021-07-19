@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Template.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Template.Core.IPlaceholderRepository">
+            <summary>
+            Хранилище Placeholder.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Core.IPlaceholderRepository.Find">
+            <summary>
+            Получает список Placeholder.
+            </summary>
+            <returns>Список Placeholder.</returns>
+        </member>
+        <member name="M:Api.Template.Core.IPlaceholderRepository.Find(System.String)">
+            <summary>
+            Получает Placeholder.
+            </summary>
+            <param name="id">Идентификатор Placeholder.</param>
+            <returns>Placeholder.</returns>
+        </member>
+        <member name="T:Api.Template.Core.IPlaceholderService">
+            <summary>
+            Сервисный объект для управления Placeholder.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Core.IPlaceholderService.Get(System.String)">
+            <summary>
+            Получить Placeholder.
+            </summary>
+            <param name="id">Идентификатор Placeholder.</param>
+            <returns>Placeholder.</returns>
+        </member>
+        <member name="M:Api.Template.Core.IPlaceholderService.Get">
+            <summary>
+            Получить список Placeholder.
+            </summary>
+            <returns>Список Placeholder.</returns>
+        </member>
+        <member name="T:Api.Template.Core.Placeholder">
+            <summary>
+            Placeholder.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Core.Placeholder.#ctor(System.String)">
+            <summary>
+            Èíèöèàëèçèðóåò íîâûé ýêçåìïëÿð êëàññà <see cref="T:Api.Template.Core.Placeholder"/>.
+            </summary>
+            <param name="id">Èäåíòèôèêàòîð Placeholder.</param>
+        </member>
+        <member name="P:Api.Template.Core.Placeholder.Id">
+            <summary>
+            Ïîëó÷àåò èäåíòèôèêàòîð Placeholder.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Core.PlaceholderService">
+            <inheritdoc/>
+        </member>
+        <member name="M:Api.Template.Core.PlaceholderService.#ctor(Api.Template.Core.IPlaceholderRepository,Microsoft.Extensions.Logging.ILogger{Api.Template.Core.PlaceholderService})">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Api.Template.Core.PlaceholderService"/>.
+            </summary>
+            <param name="placeholderRepository">Хранилище Placeholder.</param>
+            <param name="logger">Абстракция над сервисом журналирования.</param>
+        </member>
+        <member name="M:Api.Template.Core.PlaceholderService.Get(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Api.Template.Core.PlaceholderService.Get">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

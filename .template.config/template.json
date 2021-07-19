@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "bltzkrgmchn",
+    "classifications": [
+        "WebAPI"
+    ],
+    "name": "Web Api Service with MassTransit",
+    "identity": "Web Api Service with MassTransit",
+    "shortName": "webapi-masstransit",
+    "tags": {
+        "language": "C#",
+        "type": "solution"
+    },
+    "sourceName": "Api.Template",
+    "preferNameDirectory": true,
+    "symbols": {
+        "Description": {
+            "type": "parameter",
+            "isRequired": true,
+            "replaces": "{{serviceDescription}}"
+        },
+        "Authors": {
+            "type": "parameter",
+            "isRequired": true,
+            "replaces": "{{serviceAuthors}}"
+        }
+    }
+}

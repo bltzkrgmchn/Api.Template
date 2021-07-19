@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Template.Instance</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Template.Instance.BusConfiguration">
+            <summary>
+            Конфигурация шины.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Instance.BusConfiguration.ConnectionString">
+            <summary>
+            Получает или задает строку подключения.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Instance.BusConfiguration.Username">
+            <summary>
+            Получает или задает имя пользователя.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Instance.BusConfiguration.Password">
+            <summary>
+            Получает или задает пароль.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Instance.BusConfiguration.PublisherConfirmation">
+            <summary>
+            Получает или задает значение, показывающее, флаг подтверждения получения сообщений.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Instance.Program">
+            <summary>
+            Точка входа в приложение.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Instance.Program.Main(System.String[])">
+            <summary>
+            Точка входа в приложение.
+            </summary>
+            <param name="args">Аргументы запуска приложения.</param>
+        </member>
+        <member name="T:Api.Template.Instance.Startup">
+            <summary>
+            Инициализация приложения.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Instance.Startup.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment)">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Api.Template.Instance.Startup"/>.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Instance.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Конфигурация приложения.
+            </summary>
+            <param name="application">Приложение.</param>
+        </member>
+        <member name="M:Api.Template.Instance.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурация сервисов.
+            </summary>
+            <param name="services">Сервисы.</param>
+        </member>
+    </members>
+</doc>

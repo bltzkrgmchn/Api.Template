@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Template.Consumers</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Template.Consumers.GetAllPlaceholdersCommand">
+            <summary>
+            Команда получения списка Placeholder.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Consumers.GetAllPlaceholdersConsumer">
+            <summary>
+            Обработчик сообщения получения списка Placeholder.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Consumers.GetAllPlaceholdersConsumer.#ctor(Api.Template.Core.IPlaceholderService,Microsoft.Extensions.Logging.ILogger{Api.Template.Consumers.GetAllPlaceholdersConsumer})">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Api.Template.Consumers.GetAllPlaceholdersConsumer"/>.
+            </summary>
+            <param name="service">Сервисный объект для управления Placeholder.</param>
+            <param name="logger">Абстракция над сервисом журналирования.</param>
+        </member>
+        <member name="M:Api.Template.Consumers.GetAllPlaceholdersConsumer.Consume(MassTransit.ConsumeContext{Api.Template.Consumers.GetAllPlaceholdersCommand})">
+            <summary>
+            Обработать сообщение.
+            </summary>
+            <param name="context">Контекст обработки сообщения.</param>
+            <returns>Асинхронная операция <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:Api.Template.Consumers.GetAllPlaceholdersResponse">
+            <summary>
+            Ответ на команду получения списка Placeholder.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Consumers.GetAllPlaceholdersResponse.Placeholders">
+            <summary>
+            Получает или задает список Placeholder.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Consumers.GetAllPlaceholdersResponse.Result">
+            <summary>
+            Получает или задает результат обработки команды.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Consumers.GetPlaceholderCommand">
+            <summary>
+            Команда получения Placeholder.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Consumers.GetPlaceholderCommand.Id">
+            <summary>
+            Получает или задает идентификатор Placeholder.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Consumers.GetPlaceholderConsumer">
+            <summary>
+            Обработчик сообщения получения Placeholder.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Consumers.GetPlaceholderConsumer.#ctor(Api.Template.Core.IPlaceholderService,Microsoft.Extensions.Logging.ILogger{Api.Template.Consumers.GetAllPlaceholdersConsumer})">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Api.Template.Consumers.GetPlaceholderConsumer"/>.
+            </summary>
+            <param name="service">Сервисный объект для управления Placeholder.</param>
+            /// <param name="logger">Абстракция над сервисом журналирования.</param>
+        </member>
+        <member name="M:Api.Template.Consumers.GetPlaceholderConsumer.Consume(MassTransit.ConsumeContext{Api.Template.Consumers.GetPlaceholderCommand})">
+            <summary>
+            Обработать сообщение.
+            </summary>
+            <param name="context">Контекст обработки сообщения.</param>
+            <returns>Асинхронная операция <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:Api.Template.Consumers.GetPlaceholderResponse">
+            <summary>
+            Ответ на команду получения Placeholder.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Consumers.GetPlaceholderResponse.Placeholder">
+            <summary>
+            Получает или задает Placeholder.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Consumers.GetPlaceholderResponse.Result">
+            <summary>
+            Получает или задает результат обработки команды.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Consumers.Healthchecks.HealthcheckCommand">
+            <summary>
+            Команда получения состояния службы.
+            </summary>
+        </member>
+        <member name="T:Api.Template.Consumers.Healthchecks.HealthcheckConsumer">
+            <summary>
+            Обработчик сообщения получения состояния службы.
+            </summary>
+        </member>
+        <member name="M:Api.Template.Consumers.Healthchecks.HealthcheckConsumer.#ctor(Microsoft.Extensions.Logging.ILogger{Api.Template.Consumers.Healthchecks.HealthcheckConsumer})">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Api.Template.Consumers.Healthchecks.HealthcheckConsumer"/>.
+            </summary>
+            <param name="logger">Абстракция над сервисом журналирования.</param>
+        </member>
+        <member name="M:Api.Template.Consumers.Healthchecks.HealthcheckConsumer.Consume(MassTransit.ConsumeContext{Api.Template.Consumers.Healthchecks.HealthcheckCommand})">
+            <summary>
+            Обработать сообщение.
+            </summary>
+            <param name="context">Контекст обработки сообщения.</param>
+            <returns>Асинхронная операция <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:Api.Template.Consumers.Healthchecks.HealthcheckResponse">
+            <summary>
+            Ответ на команду получения состояния службы.
+            </summary>
+        </member>
+        <member name="P:Api.Template.Consumers.Healthchecks.HealthcheckResponse.Result">
+            <summary>
+            Получает или задает результат обработки команды.
+            </summary>
+        </member>
+    </members>
+</doc>
