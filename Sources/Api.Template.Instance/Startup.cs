@@ -1,4 +1,7 @@
-﻿using MassTransit;
+﻿using Api.Template.Core;
+using Api.Template.Data;
+using Api.Template.WebApi;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
@@ -6,12 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using Api.Template.Consumers;
-using Api.Template.Consumers.Healthchecks;
-using Api.Template.Core;
-using Api.Template.Data;
-using Api.Template.WebApi;
-using System;
 
 namespace Api.Template.Instance
 {
@@ -78,10 +75,6 @@ namespace Api.Template.Instance
                     this.configuration.GetConnectionString("Placeholders"),
                     o.GetRequiredService<ILogger<PlaceholderRepository>>()));
 
-            services.AddSingleton<GetAllPlaceholdersConsumer>();
-
-            services.AddSingleton<GetPlaceholderConsumer>();
-
             Log.Information("Регистрация сервисов успешно завершена.");
 
             Log.Information("Начинается регистрация шины.");
@@ -89,10 +82,6 @@ namespace Api.Template.Instance
             // Регистрация потребителей сообщений
             services.AddMassTransit(x =>
             {
-                x.AddConsumer<GetAllPlaceholdersConsumer>();
-                x.AddConsumer<GetPlaceholderConsumer>();
-                x.AddConsumer<HealthcheckConsumer>();
-
                 x.AddRequestClient<AuthorizeCommand>();
 
                 x.UsingRabbitMq((context, configuration) =>
@@ -116,12 +105,6 @@ namespace Api.Template.Instance
 
             // Регистрация клиентов для запроса данных от потребителей сообщений из api.
             // Каждый клиент зарегистрирован таким образом, что бы в рамках каждого запроса к api существовал свой клиент.
-            services.AddScoped(serviceProvider => serviceProvider.GetRequiredService<IBus>()
-                .CreateRequestClient<GetAllPlaceholdersCommand>());
-            services.AddScoped(serviceProvider => serviceProvider.GetRequiredService<IBus>()
-                .CreateRequestClient<GetPlaceholderCommand>());
-            services.AddScoped(serviceProvider => serviceProvider.GetRequiredService<IBus>()
-                .CreateRequestClient<HealthcheckCommand>());
             services.AddScoped(serviceProvider => serviceProvider.GetRequiredService<IBus>()
                 .CreateRequestClient<AuthorizeCommand>());
 

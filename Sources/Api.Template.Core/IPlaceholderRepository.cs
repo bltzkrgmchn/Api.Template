@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Api.Template.Core
 {
@@ -11,13 +12,13 @@ namespace Api.Template.Core
         /// Получает список Placeholder.
         /// </summary>
         /// <returns>Список Placeholder.</returns>
-        List<Placeholder> Find();
+        Task<List<Placeholder>> Find();
 
         /// <summary>
         /// Получает Placeholder.
         /// </summary>
         /// <param name="id">Идентификатор Placeholder.</param>
         /// <returns>Placeholder.</returns>
-        Placeholder Find(string id);
+        Task<Placeholder> Find(string id);
     }
 }

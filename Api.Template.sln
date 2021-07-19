@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.Instance", "Sources\Api.Template.Instance\Api.Template.Instance.csproj", "{87AF7717-995D-43EA-A0F5-8302678D8BD9}"
 EndProject
@@ -30,13 +30,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.Core", "Source
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.Data", "Sources\Api.Template.Data\Api.Template.Data.csproj", "{C00DAB5C-6CA1-48C8-8DE9-0C91DD51C784}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.Consumers", "Sources\Api.Template.Consumers\Api.Template.Consumers.csproj", "{2B795027-AED6-4F72-996D-2B0DA49D0BF3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.WebApi", "Sources\Api.Template.WebApi\Api.Template.WebApi.csproj", "{2FD3E233-7274-4197-BE5A-1300FB5F4CFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.WebApi.Tests", "Tests\Api.Template.WebApi.Tests\Api.Template.WebApi.Tests.csproj", "{C180334F-B7C9-4462-9C7A-DD284F4F38F4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.Consumers.Tests", "Tests\Api.Template.Consumers.Tests\Api.Template.Consumers.Tests.csproj", "{8790A65F-1DC6-480C-B8D8-507329066539}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Template.Core.Tests", "Tests\Api.Template.Core.Tests\Api.Template.Core.Tests.csproj", "{18F5FB50-5736-4C95-8FD7-6FBA5D70812A}"
 EndProject
@@ -58,10 +54,6 @@ Global
 		{C00DAB5C-6CA1-48C8-8DE9-0C91DD51C784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C00DAB5C-6CA1-48C8-8DE9-0C91DD51C784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C00DAB5C-6CA1-48C8-8DE9-0C91DD51C784}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B795027-AED6-4F72-996D-2B0DA49D0BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B795027-AED6-4F72-996D-2B0DA49D0BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B795027-AED6-4F72-996D-2B0DA49D0BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B795027-AED6-4F72-996D-2B0DA49D0BF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2FD3E233-7274-4197-BE5A-1300FB5F4CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FD3E233-7274-4197-BE5A-1300FB5F4CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD3E233-7274-4197-BE5A-1300FB5F4CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,10 +62,6 @@ Global
 		{C180334F-B7C9-4462-9C7A-DD284F4F38F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C180334F-B7C9-4462-9C7A-DD284F4F38F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C180334F-B7C9-4462-9C7A-DD284F4F38F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8790A65F-1DC6-480C-B8D8-507329066539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8790A65F-1DC6-480C-B8D8-507329066539}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8790A65F-1DC6-480C-B8D8-507329066539}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8790A65F-1DC6-480C-B8D8-507329066539}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18F5FB50-5736-4C95-8FD7-6FBA5D70812A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18F5FB50-5736-4C95-8FD7-6FBA5D70812A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F5FB50-5736-4C95-8FD7-6FBA5D70812A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -86,10 +74,8 @@ Global
 		{87AF7717-995D-43EA-A0F5-8302678D8BD9} = {E4B1F4BA-255E-4460-A7D2-E2E6CD8A8F6D}
 		{C10A9A36-131B-4705-AFB5-228A847D420E} = {E4B1F4BA-255E-4460-A7D2-E2E6CD8A8F6D}
 		{C00DAB5C-6CA1-48C8-8DE9-0C91DD51C784} = {E4B1F4BA-255E-4460-A7D2-E2E6CD8A8F6D}
-		{2B795027-AED6-4F72-996D-2B0DA49D0BF3} = {E4B1F4BA-255E-4460-A7D2-E2E6CD8A8F6D}
 		{2FD3E233-7274-4197-BE5A-1300FB5F4CFF} = {E4B1F4BA-255E-4460-A7D2-E2E6CD8A8F6D}
 		{C180334F-B7C9-4462-9C7A-DD284F4F38F4} = {9BE853EF-A484-42C2-908E-6895824D61EB}
-		{8790A65F-1DC6-480C-B8D8-507329066539} = {9BE853EF-A484-42C2-908E-6895824D61EB}
 		{18F5FB50-5736-4C95-8FD7-6FBA5D70812A} = {9BE853EF-A484-42C2-908E-6895824D61EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

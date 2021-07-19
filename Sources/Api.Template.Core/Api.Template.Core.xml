@@ -47,13 +47,13 @@
         </member>
         <member name="M:Api.Template.Core.Placeholder.#ctor(System.String)">
             <summary>
-            Èíèöèàëèçèðóåò íîâûé ýêçåìïëÿð êëàññà <see cref="T:Api.Template.Core.Placeholder"/>.
+            �������������� ����� ��������� ������ <see cref="T:Api.Template.Core.Placeholder"/>.
             </summary>
-            <param name="id">Èäåíòèôèêàòîð Placeholder.</param>
+            <param name="id">������������� Placeholder.</param>
         </member>
         <member name="P:Api.Template.Core.Placeholder.Id">
             <summary>
-            Ïîëó÷àåò èäåíòèôèêàòîð Placeholder.
+            �������� ������������� Placeholder.
             </summary>
         </member>
         <member name="T:Api.Template.Core.PlaceholderService">

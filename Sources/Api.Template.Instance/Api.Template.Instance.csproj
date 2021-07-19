@@ -33,7 +33,6 @@
         </PackageReference>
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Api.Template.Consumers\Api.Template.Consumers.csproj" />
         <ProjectReference Include="..\Api.Template.Data\Api.Template.Data.csproj" />
         <ProjectReference Include="..\Api.Template.WebApi\Api.Template.WebApi.csproj" />
     </ItemGroup>

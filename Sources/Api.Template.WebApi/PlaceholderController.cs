@@ -1,6 +1,5 @@
-﻿using MassTransit;
+﻿using Api.Template.Core;
 using Microsoft.AspNetCore.Mvc;
-using Api.Template.Consumers;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -14,18 +13,15 @@ namespace Api.Template.WebApi
     [Route("/placeholders")]
     public class PlaceholderController : ControllerBase
     {
-        private readonly IRequestClient<GetPlaceholderCommand> getPlaceholderClient;
-        private readonly IRequestClient<GetAllPlaceholdersCommand> getAllPlaceholdersClient;
+        private readonly IPlaceholderService placeholderService;
 
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="PlaceholderController"/>.
         /// </summary>
-        /// <param name="getPlaceholderClient">Клиент получения Placeholder.</param>
-        /// <param name="getAllPlaceholdersClient">Клиент получения списка Placeholder.</param>
-        public PlaceholderController(IRequestClient<GetPlaceholderCommand> getPlaceholderClient, IRequestClient<GetAllPlaceholdersCommand> getAllPlaceholdersClient)
+        /// <param name="placeholderService">Сервис Placeholder.</param>
+        public PlaceholderController(IPlaceholderService placeholderService)
         {
-            this.getPlaceholderClient = getPlaceholderClient;
-            this.getAllPlaceholdersClient = getAllPlaceholdersClient;
+            this.placeholderService = placeholderService;
         }
 
         /// <summary>
@@ -49,18 +45,8 @@ namespace Api.Template.WebApi
         {
             try
             {
-                Response<GetAllPlaceholdersResponse> response = await this.getAllPlaceholdersClient.GetResponse<GetAllPlaceholdersResponse>(new GetAllPlaceholdersCommand());
-
-                if (response.Message.Result == "success")
-                {
-                    return this.Ok(response.Message.Placeholders);
-                }
-
-                return new StatusCodeResult((int)HttpStatusCode.BadGateway);
-            }
-            catch (RequestTimeoutException)
-            {
-                return new StatusCodeResult((int)HttpStatusCode.GatewayTimeout);
+                var placeholders = this.placeholderService.Get();
+                return this.Ok(placeholders);
             }
             catch (Exception)
             {
@@ -80,21 +66,14 @@ namespace Api.Template.WebApi
         {
             try
             {
-                Response<GetPlaceholderResponse> response = await this.getPlaceholderClient.GetResponse<GetPlaceholderResponse>(new GetPlaceholderCommand { Id = id });
+                var placeholder = this.placeholderService.Get(id);
 
-                switch (response.Message.Result)
+                if (placeholder != null)
                 {
-                    case "success":
-                        return this.Ok(response.Message.Placeholder);
-                    case "not-found":
-                        return new StatusCodeResult((int)HttpStatusCode.NotFound);
-                    default:
-                        return new StatusCodeResult((int)HttpStatusCode.BadGateway);
+                    return this.Ok(placeholder);
                 }
-            }
-            catch (RequestTimeoutException)
-            {
-                return new StatusCodeResult((int)HttpStatusCode.GatewayTimeout);
+
+                return new StatusCodeResult((int)HttpStatusCode.NotFound);
             }
             catch (Exception)
             {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Api.Template.Core
 {
@@ -21,17 +22,17 @@ namespace Api.Template.Core
         }
 
         /// <inheritdoc/>
-        public Placeholder Get(string id)
+        public async Task<Placeholder> Get(string id)
         {
             this.logger.LogInformation($"Выполняется поиск Placeholder с идентификатором '{id}'.");
-            return this.placeholderRepository.Find(id);
+            return await this.placeholderRepository.Find(id);
         }
 
         /// <inheritdoc/>
-        public List<Placeholder> Get()
+        public async Task<List<Placeholder>> Get()
         {
             this.logger.LogInformation($"Выполняется поиск всех Placeholder.");
-            return this.placeholderRepository.Find();
+            return await this.placeholderRepository.Find();
         }
     }
 }

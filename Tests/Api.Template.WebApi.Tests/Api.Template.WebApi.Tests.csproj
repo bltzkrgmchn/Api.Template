@@ -24,7 +24,6 @@
         <AdditionalFiles Include="$(SolutionDir)\stylecop.json" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\Sources\Api.Template.Consumers\Api.Template.Consumers.csproj" />
       <ProjectReference Include="..\..\Sources\Api.Template.WebApi\Api.Template.WebApi.csproj" />
     </ItemGroup>
 	<ItemGroup>

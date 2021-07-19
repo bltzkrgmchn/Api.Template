@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Api.Template.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Api.Template.Core;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Api.Template.Data
 {
@@ -24,25 +25,25 @@ namespace Api.Template.Data
         }
 
         /// <inheritdoc />
-        public List<Placeholder> Find()
+        public async Task<List<Placeholder>> Find()
         {
             this.logger.LogInformation("Выполняется поиск всех Placeholder в хранилище Placeholder.");
 
             using (PlaceholderContext context = new PlaceholderContext(this.connectionString))
             {
                 DbSet<PlaceholderDto> dtos = context.Placeholders;
-                return dtos.Select(o => new Placeholder(o.Id)).ToList();
+                return await dtos.Select(o => new Placeholder(o.Id)).ToListAsync();
             }
         }
 
         /// <inheritdoc />
-        public Placeholder Find(string id)
+        public async Task<Placeholder> Find(string id)
         {
             this.logger.LogInformation($"Выполняется поиск Placeholder с идентификатором '{id}' в хранилище Placeholder.");
 
             using (PlaceholderContext context = new PlaceholderContext(this.connectionString))
             {
-                PlaceholderDto dto = context.Placeholders.FirstOrDefault(o => o.Id == id);
+                PlaceholderDto dto = await context.Placeholders.FirstOrDefaultAsync(o => o.Id == id);
                 return dto != null ? new Placeholder(dto.Id) : null;
             }
         }

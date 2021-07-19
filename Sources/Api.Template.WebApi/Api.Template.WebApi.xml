@@ -47,12 +47,6 @@
             Контроллер проверки состояния службы.
             </summary>
         </member>
-        <member name="M:Api.Template.WebApi.HealthController.#ctor(MassTransit.IRequestClient{Api.Template.Consumers.Healthchecks.HealthcheckCommand})">
-            <summary>
-            Инициализирует новый экземпляр класса <see cref="T:Api.Template.WebApi.HealthController"/>.
-            </summary>
-            <param name="healthClient">Клиент получения статуса службы.</param>
-        </member>
         <member name="M:Api.Template.WebApi.HealthController.Get">
             <summary>
             Получить статус службы.
@@ -64,12 +58,11 @@
             Контроллер Placeholder.
             </summary>
         </member>
-        <member name="M:Api.Template.WebApi.PlaceholderController.#ctor(MassTransit.IRequestClient{Api.Template.Consumers.GetPlaceholderCommand},MassTransit.IRequestClient{Api.Template.Consumers.GetAllPlaceholdersCommand})">
+        <member name="M:Api.Template.WebApi.PlaceholderController.#ctor(Api.Template.Core.IPlaceholderService)">
             <summary>
             Инициализирует новый экземпляр класса <see cref="T:Api.Template.WebApi.PlaceholderController"/>.
             </summary>
-            <param name="getPlaceholderClient">Клиент получения Placeholder.</param>
-            <param name="getAllPlaceholdersClient">Клиент получения списка Placeholder.</param>
+            <param name="placeholderService">Сервис Placeholder.</param>
         </member>
         <member name="M:Api.Template.WebApi.PlaceholderController.Options">
             <summary>

@@ -3,6 +3,7 @@ using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Api.Template.Core.Tests
 {
@@ -19,7 +20,7 @@ namespace Api.Template.Core.Tests
 
             PlaceholderService sut = new PlaceholderService(repository, logger);
 
-            List<Placeholder> result = sut.Get();
+            List<Placeholder> result = sut.Get().Result;
             result.Should().NotContainNulls();
             result.Should().ContainEquivalentOf(new Placeholder("1"));
             result.Should().ContainEquivalentOf(new Placeholder("2"));
@@ -36,7 +37,7 @@ namespace Api.Template.Core.Tests
 
             PlaceholderService sut = new PlaceholderService(repository, logger);
 
-            Placeholder result = sut.Get("test");
+            Placeholder result = sut.Get("test").Result;
             result.Should().Be(placeholder);
         }
 
@@ -45,12 +46,12 @@ namespace Api.Template.Core.Tests
         public void CantGetInexistingPlaceholder()
         {
             IPlaceholderRepository repository = A.Fake<IPlaceholderRepository>();
-            A.CallTo(() => repository.Find(A<string>._)).Returns(null);
+            A.CallTo(() => repository.Find(A<string>._)).Returns(Task.FromResult<Placeholder>(null));
             ILogger<PlaceholderService> logger = A.Fake<ILogger<PlaceholderService>>();
 
             PlaceholderService sut = new PlaceholderService(repository, logger);
 
-            Placeholder result = sut.Get("test");
+            Placeholder result = sut.Get("test").Result;
             result.Should().Be(null);
         }
     }
