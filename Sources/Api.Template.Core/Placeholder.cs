@@ -6,7 +6,7 @@ namespace Api.Template.Core
     public class Placeholder
     {
         /// <summary>
-        /// �������������� ����� ��������� ������ <see cref="Placeholder"/>.
+        /// Инициализирует новый экземпляр класса <see cref="Placeholder"/>.
         /// </summary>
         /// <param name="id">������������� Placeholder.</param>
         public Placeholder(string id)
@@ -15,7 +15,7 @@ namespace Api.Template.Core
         }
 
         /// <summary>
-        /// �������� ������������� Placeholder.
+        /// Получает идентификатор Placeholder.
         /// </summary>
         public string Id { get; private set; }
     }
